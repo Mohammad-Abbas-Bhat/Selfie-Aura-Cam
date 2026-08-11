@@ -21,17 +21,35 @@
 
     <title>Privacy Policy | Selfie Aura Cam</title>
 
-    <!-- Browser tab / favicon -->
+    <!-- =========================================================
+         FAVICON / BROWSER TAB ICON
+         Same setup as index.html.
+         The ?v=2 suffix helps bypass older cached favicon data.
+         ========================================================= -->
+
     <link
         rel="icon"
         type="image/png"
-        href="assets/selfie-aura-cam-icon.png"
+        sizes="32x32"
+        href="./assets/selfie-aura-cam-icon.png?v=2"
     >
 
-    <!-- Apple / iOS home-screen icon -->
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="./assets/selfie-aura-cam-icon.png?v=2"
+    >
+
+    <link
+        rel="shortcut icon"
+        type="image/png"
+        href="./assets/selfie-aura-cam-icon.png?v=2"
+    >
+
     <link
         rel="apple-touch-icon"
-        href="assets/selfie-aura-cam-icon.png"
+        href="./assets/selfie-aura-cam-icon.png?v=2"
     >
 
     <style>
@@ -138,6 +156,7 @@
         /*
          * SAME APP ICON STYLE USED ON index.html
          */
+
         .app-icon {
             width: 112px;
             height: 112px;
@@ -333,6 +352,7 @@
         /*
          * Mobile layout
          */
+
         @media (max-width: 600px) {
             body {
                 padding: 20px 16px;
@@ -377,6 +397,7 @@
          * Accessibility:
          * respect reduced-motion preference
          */
+
         @media (prefers-reduced-motion: reduce) {
             .container {
                 animation: none;
@@ -418,10 +439,10 @@
 
         <div class="page-header">
 
-            <!-- Actual Selfie Aura Cam icon -->
+            <!-- Actual Selfie Aura Cam icon inside page -->
             <div class="app-icon">
                 <img
-                    src="assets/selfie-aura-cam-icon.png"
+                    src="./assets/selfie-aura-cam-icon.png"
                     alt="Selfie Aura Cam app icon"
                     width="112"
                     height="112"
