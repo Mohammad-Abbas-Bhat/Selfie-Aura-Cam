@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -10,7 +11,7 @@
 
     <meta
         name="description"
-        content="Selfie Aura Cam — professional beauty filters and real-time photo editing."
+        content="Selfie Aura Cam — real-time beauty filters, GPU-accelerated photo processing, HD and SD capture, advanced beauty controls, lip styling, gallery editing and more."
     >
 
     <meta
@@ -20,30 +21,71 @@
 
     <title>Selfie Aura Cam</title>
 
-    <!-- Browser tab / bookmark icon -->
+    <!-- =========================================================
+         FAVICON / BROWSER TAB ICON
+         The ?v=2 suffix helps bypass an older cached favicon.
+         ========================================================= -->
+
     <link
         rel="icon"
         type="image/png"
-        href="assets/selfie-aura-cam-icon.png"
+        sizes="32x32"
+        href="./assets/selfie-aura-cam-icon.png?v=2"
     >
 
-    <!-- Apple / mobile home-screen icon -->
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="./assets/selfie-aura-cam-icon.png?v=2"
+    >
+
+    <link
+        rel="shortcut icon"
+        type="image/png"
+        href="./assets/selfie-aura-cam-icon.png?v=2"
+    >
+
     <link
         rel="apple-touch-icon"
-        href="assets/selfie-aura-cam-icon.png"
+        href="./assets/selfie-aura-cam-icon.png?v=2"
     >
 
     <style>
         :root {
             --bg: #0f0a19;
-            --surface: rgba(30, 22, 48, 0.82);
-            --surface-border: rgba(255, 255, 255, 0.08);
+
+            --surface:
+                rgba(
+                    30,
+                    22,
+                    48,
+                    0.82
+                );
+
+            --surface-soft:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.035
+                );
+
+            --surface-border:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
 
             --primary: #c084fc;
             --secondary: #f472b6;
+            --accent-blue: #38bdf8;
 
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
+            --text-soft: #cbd5e1;
         }
 
         * {
@@ -54,6 +96,7 @@
 
         html {
             min-height: 100%;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -68,28 +111,36 @@
                 sans-serif;
 
             background-color: var(--bg);
+
             color: var(--text-main);
 
             line-height: 1.6;
+
             min-height: 100vh;
 
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
 
-            padding: 20px;
+            padding:
+                40px
+                20px;
 
             background-image:
                 radial-gradient(
-                    circle at 15% 50%,
+                    circle at 15% 30%,
                     rgba(139, 92, 246, 0.12),
                     transparent 30%
                 ),
                 radial-gradient(
-                    circle at 85% 30%,
+                    circle at 85% 20%,
                     rgba(236, 72, 153, 0.12),
                     transparent 30%
+                ),
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(56, 189, 248, 0.05),
+                    transparent 35%
                 );
 
             background-attachment: fixed;
@@ -107,9 +158,11 @@
 
             border-radius: 28px;
 
-            padding: 50px 40px;
+            padding:
+                50px
+                40px;
 
-            max-width: 550px;
+            max-width: 860px;
             width: 100%;
 
             text-align: center;
@@ -127,22 +180,22 @@
         @keyframes fadeUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform:
+                    translateY(20px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform:
+                    translateY(0);
             }
         }
 
-        /*
-         * Actual Selfie Aura Cam icon.
-         *
-         * The icon itself already contains its own rounded-square
-         * background and branding, so no artificial gradient
-         * background is placed behind it.
-         */
+        /* =========================================================
+           APP ICON
+           Same icon styling used previously.
+           ========================================================= */
+
         .app-icon {
             width: 112px;
             height: 112px;
@@ -172,15 +225,29 @@
             object-fit: cover;
         }
 
+        /* =========================================================
+           BADGE
+           ========================================================= */
+
         .badge {
             display: inline-block;
 
             background:
-                rgba(255, 255, 255, 0.05);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.05
+                );
 
             border:
                 1px solid
-                rgba(255, 255, 255, 0.1);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.1
+                );
 
             padding:
                 6px
@@ -199,10 +266,17 @@
             text-transform: uppercase;
         }
 
+        /* =========================================================
+           HERO
+           ========================================================= */
+
         h1 {
-            font-size: 2.4em;
+            font-size: 2.6em;
+
             font-weight: 800;
-            letter-spacing: -0.02em;
+
+            letter-spacing:
+                -0.02em;
 
             margin-bottom: 12px;
 
@@ -217,29 +291,234 @@
             background-clip: text;
 
             -webkit-text-fill-color: transparent;
+
             color: transparent;
         }
 
         .subtitle {
-            font-size: 1.1em;
+            font-size: 1.15em;
 
-            color: #cbd5e1;
+            color: var(--text-soft);
 
-            margin-bottom: 30px;
+            margin-bottom: 28px;
 
             font-weight: 500;
         }
 
         .description {
-            font-size: 0.95em;
+            max-width: 700px;
 
-            color: var(--text-muted);
-
-            margin-bottom: 40px;
+            margin:
+                0
+                auto
+                42px;
 
             padding:
                 0
                 10px;
+
+            font-size: 0.98em;
+
+            color: var(--text-muted);
+        }
+
+        /* =========================================================
+           SECTION TITLES
+           ========================================================= */
+
+        .section {
+            margin-top: 46px;
+        }
+
+        .section-title {
+            font-size: 1.65em;
+
+            font-weight: 750;
+
+            letter-spacing:
+                -0.01em;
+
+            margin-bottom: 10px;
+
+            color: #f1f5f9;
+        }
+
+        .section-description {
+            max-width: 650px;
+
+            margin:
+                0
+                auto
+                26px;
+
+            color: var(--text-muted);
+
+            font-size: 0.93em;
+        }
+
+        /* =========================================================
+           FEATURE GRID
+           ========================================================= */
+
+        .features-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    minmax(0, 1fr)
+                );
+
+            gap: 14px;
+
+            text-align: left;
+        }
+
+        .feature-card {
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.035
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.07
+                );
+
+            border-radius: 18px;
+
+            padding:
+                20px;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .feature-card:hover {
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.055
+                );
+
+            border-color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.13
+                );
+
+            transform:
+                translateY(-2px);
+        }
+
+        .feature-icon {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 14px;
+
+            border-radius: 12px;
+
+            font-size: 1.25em;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(192, 132, 252, 0.18),
+                    rgba(244, 114, 182, 0.18)
+                );
+
+            border:
+                1px solid
+                rgba(
+                    192,
+                    132,
+                    252,
+                    0.18
+                );
+        }
+
+        .feature-card h2 {
+            color: #f1f5f9;
+
+            font-size: 1.05em;
+
+            margin-bottom: 8px;
+
+            font-weight: 650;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+
+            font-size: 0.88em;
+
+            line-height: 1.6;
+        }
+
+        /* =========================================================
+           FEATURE HIGHLIGHT
+           ========================================================= */
+
+        .feature-highlight {
+            margin-top: 16px;
+
+            padding:
+                22px
+                24px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139, 92, 246, 0.10),
+                    rgba(236, 72, 153, 0.08)
+                );
+
+            border:
+                1px solid
+                rgba(
+                    192,
+                    132,
+                    252,
+                    0.14
+                );
+
+            color: var(--text-soft);
+
+            font-size: 0.92em;
+
+            text-align: left;
+        }
+
+        .feature-highlight strong {
+            color: #f8fafc;
+        }
+
+        /* =========================================================
+           LINKS
+           ========================================================= */
+
+        .links-section {
+            margin-top: 46px;
         }
 
         .links-grid {
@@ -247,8 +526,8 @@
 
             grid-template-columns:
                 repeat(
-                    auto-fit,
-                    minmax(140px, 1fr)
+                    3,
+                    minmax(0, 1fr)
                 );
 
             gap: 12px;
@@ -258,11 +537,21 @@
 
         .links-grid a {
             background:
-                rgba(255, 255, 255, 0.03);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.03
+                );
 
             border:
                 1px solid
-                rgba(255, 255, 255, 0.05);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.05
+                );
 
             color: var(--text-main);
 
@@ -286,10 +575,20 @@
         .links-grid a:hover,
         .links-grid a:focus-visible {
             background:
-                rgba(255, 255, 255, 0.08);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
 
             border-color:
-                rgba(255, 255, 255, 0.15);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.15
+                );
 
             transform:
                 translateY(-2px);
@@ -303,23 +602,35 @@
             outline-offset: 3px;
         }
 
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
         .footer {
-            margin-top: 40px;
+            margin-top: 34px;
 
             font-size: 0.85em;
 
             color:
-                rgba(148, 163, 184, 0.5);
+                rgba(
+                    148,
+                    163,
+                    184,
+                    0.5
+                );
 
             text-align: center;
         }
 
-        /*
-         * Mobile adjustments.
-         */
-        @media (max-width: 600px) {
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 700px) {
             body {
-                padding: 16px;
+                padding:
+                    20px
+                    16px;
             }
 
             .container {
@@ -340,7 +651,7 @@
             }
 
             h1 {
-                font-size: 2em;
+                font-size: 2.1em;
             }
 
             .subtitle {
@@ -349,11 +660,20 @@
 
             .description {
                 padding: 0;
-                margin-bottom: 32px;
+
+                margin-bottom: 34px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
             }
 
             .links-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .section {
+                margin-top: 38px;
             }
 
             .footer {
@@ -361,20 +681,45 @@
             }
         }
 
-        /*
-         * Accessibility:
-         * disable entrance/movement animations for users who
-         * request reduced motion.
-         */
+        /* =========================================================
+           VERY SMALL SCREENS
+           ========================================================= */
+
+        @media (max-width: 380px) {
+            .container {
+                padding:
+                    32px
+                    18px;
+            }
+
+            h1 {
+                font-size: 1.85em;
+            }
+
+            .feature-card {
+                padding: 18px;
+            }
+        }
+
+        /* =========================================================
+           REDUCED MOTION
+           ========================================================= */
+
         @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
             .container {
                 animation: none;
             }
 
+            .feature-card,
             .links-grid a {
                 transition: none;
             }
 
+            .feature-card:hover,
             .links-grid a:hover,
             .links-grid a:focus-visible {
                 transform: none;
@@ -387,15 +732,22 @@
 
     <main class="container">
 
-        <!-- Actual Selfie Aura Cam application icon -->
+        <!-- =====================================================
+             APP ICON
+             ===================================================== -->
+
         <div class="app-icon">
             <img
-                src="assets/selfie-aura-cam-icon.png"
+                src="./assets/selfie-aura-cam-icon.png"
                 alt="Selfie Aura Cam app icon"
                 width="112"
                 height="112"
             >
         </div>
+
+        <!-- =====================================================
+             HERO
+             ===================================================== -->
 
         <div class="badge">
             Official App
@@ -406,32 +758,360 @@
         </h1>
 
         <p class="subtitle">
-            Professional beauty filters &amp; real-time editing.
+            Professional beauty filters &amp; real-time photo editing.
         </p>
 
         <p class="description">
-            Welcome to the official home of Selfie Aura Cam.
-            Our app utilizes advanced GPU-accelerated processing
-            to give you precision control over your camera filters
-            in real-time.
+            Selfie Aura Cam combines real-time camera filters,
+            GPU-accelerated beauty processing and detailed photo
+            editing controls in one streamlined camera experience.
+            Preview your look live, capture your photo, or edit
+            images from your gallery with precise beauty and
+            colour controls.
         </p>
 
-        <nav
-            class="links-grid"
-            aria-label="Selfie Aura Cam links"
+        <!-- =====================================================
+             MAIN FEATURES
+             ===================================================== -->
+
+        <section
+            class="section"
+            aria-labelledby="features-title"
         >
-            <a href="privacy-policy.html">
-                Privacy Policy
-            </a>
 
-            <a href="terms-of-service.html">
-                Terms of Service
-            </a>
+            <h2
+                class="section-title"
+                id="features-title"
+            >
+                Main Features
+            </h2>
 
-            <a href="mailto:Mohammadabbasbhat@outlook.com">
-                Contact Support
-            </a>
-        </nav>
+            <p class="section-description">
+                Built for responsive live preview, high-quality
+                photo capture and detailed control over filters
+                and beauty effects.
+            </p>
+
+            <div class="features-grid">
+
+                <!-- Real-time filters -->
+                <article class="feature-card">
+
+                    <div
+                        class="feature-icon"
+                        aria-hidden="true"
+                    >
+                        ✨
+                    </div>
+
+                    <h2>
+                        Real-Time Beauty Filters
+                    </h2>
+
+                    <p>
+                        Preview beauty effects and colour filters
+                        directly on the live camera feed before
+                        capturing your photo.
+                    </p>
+
+                </article>
+
+                <!-- GPU acceleration -->
+                <article class="feature-card">
+
+                    <div
+                        class="feature-icon"
+                        aria-hidden="true"
+                    >
+                        ⚡
+                    </div>
+
+                    <h2>
+                        GPU-Accelerated Processing
+                    </h2>
+
+                    <p>
+                        GPU-based image processing delivers
+                        responsive real-time filtering while
+                        preserving detailed beauty and colour
+                        adjustments.
+                    </p>
+
+                </article>
+
+                <!-- Filter collection -->
+                <article class="feature-card">
+
+                    <div
+                        class="feature-icon"
+                        aria-hidden="true"
+                    >
+                        🎨
+                    </div>
+
+                    <h2>
+                        Curated Filter Collection
+                    </h2>
+
+                    <p>
+                        Choose from distinctive colour styles
+                        ranging from clean and natural looks to
+                        cinematic, cool, warm and expressive
+                        creative filters.
+                    </p>
+
+                </article>
+
+                <!-- Beauty -->
+                <article class="feature-card">
+
+                    <div
+                        class="feature-icon"
+                        aria-hidden="true"
+                    >
+                        💎
+                    </div>
+
+                    <h2>
+                        Advanced Beauty Controls
+                    </h2>
+
+                    <p>
+                        Fine-tune facial beauty effects while
+                        retaining important natural details such
+                        as eyes, eyebrows, lips, hair and facial
+                        features.
+                    </p>
+
+                </article>
+
+                <!-- Lipstick -->
+                <article class="feature-card">
+
+                    <div
+                        class="feature-icon"
+                        aria-hidden="true"
+                    >
+                        💄
+                    </div>
+
+                    <h2>
+                        Lip Colour &amp; Lip Liner
+                    </h2>
+
+                    <p>
+                        Personalise lip colour and lip-liner
+                        styling with dedicated colour and
+                        intensity controls for compatible beauty
+                        filters.
+                    </p>
+
+                </article>
+
+                <!-- Teeth whitening -->
+                <article class="feature-card">
+
+                    <div
+                        class="feature-icon"
+                        aria-hidden="true"
+                    >
+                        ✦
+                    </div>
+
+                    <h2>
+                        Teeth Whitening
+                    </h2>
+
+                    <p>
+                        Enable or disable teeth whitening as part
+                        of the beauty settings for a cleaner,
+                        brighter smile when desired.
+                    </p>
+
+                </article>
+
+                <!-- Capture quality -->
+                <article class="feature-card">
+
+                    <div
+                        class="feature-icon"
+                        aria-hidden="true"
+                    >
+                        📷
+                    </div>
+
+                    <h2>
+                        HD &amp; SD Capture Quality
+                    </h2>
+
+                    <p>
+                        Select between HD and SD capture modes
+                        depending on whether you prefer
+                        full-resolution processing or a faster
+                        rendered capture workflow.
+                    </p>
+
+                </article>
+
+                <!-- Gallery -->
+                <article class="feature-card">
+
+                    <div
+                        class="feature-icon"
+                        aria-hidden="true"
+                    >
+                        🖼️
+                    </div>
+
+                    <h2>
+                        Gallery Photo Editing
+                    </h2>
+
+                    <p>
+                        Import an existing photo from your
+                        gallery and apply filters and supported
+                        beauty adjustments without taking a new
+                        picture.
+                    </p>
+
+                </article>
+
+                <!-- Crop -->
+                <article class="feature-card">
+
+                    <div
+                        class="feature-icon"
+                        aria-hidden="true"
+                    >
+                        ✂️
+                    </div>
+
+                    <h2>
+                        Photo Cropping
+                    </h2>
+
+                    <p>
+                        Crop imported photos before editing so
+                        the final composition can be prepared
+                        directly within the app workflow.
+                    </p>
+
+                </article>
+
+                <!-- Front / rear camera -->
+                <article class="feature-card">
+
+                    <div
+                        class="feature-icon"
+                        aria-hidden="true"
+                    >
+                        🔄
+                    </div>
+
+                    <h2>
+                        Front &amp; Rear Camera
+                    </h2>
+
+                    <p>
+                        Switch between supported front and rear
+                        cameras while keeping the camera
+                        interface focused on quick photo
+                        creation.
+                    </p>
+
+                </article>
+
+                <!-- Flash -->
+                <article class="feature-card">
+
+                    <div
+                        class="feature-icon"
+                        aria-hidden="true"
+                    >
+                        ⚡
+                    </div>
+
+                    <h2>
+                        Camera Flash Controls
+                    </h2>
+
+                    <p>
+                        Access flash controls directly from the
+                        camera interface when supported by the
+                        active camera.
+                    </p>
+
+                </article>
+
+                <!-- Local processing -->
+                <article class="feature-card">
+
+                    <div
+                        class="feature-icon"
+                        aria-hidden="true"
+                    >
+                        🔒
+                    </div>
+
+                    <h2>
+                        Local Photo Processing
+                    </h2>
+
+                    <p>
+                        Camera and beauty processing is performed
+                        on the device, with captured and edited
+                        photos saved through the local device
+                        media workflow.
+                    </p>
+
+                </article>
+
+            </div>
+
+            <div class="feature-highlight">
+
+                <strong>
+                    Designed for live preview and captured-photo consistency.
+                </strong>
+
+                Selfie Aura Cam combines camera processing,
+                beauty masks, colour grading and saved-photo
+                processing while providing dedicated controls
+                for capture quality and beauty customisation.
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             LINKS
+             ===================================================== -->
+
+        <section
+            class="links-section"
+            aria-label="Selfie Aura Cam information"
+        >
+
+            <nav
+                class="links-grid"
+                aria-label="Selfie Aura Cam links"
+            >
+
+                <a href="privacy-policy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms-of-service.html">
+                    Terms of Service
+                </a>
+
+                <a href="mailto:Mohammadabbasbhat@outlook.com">
+                    Contact Support
+                </a>
+
+            </nav>
+
+        </section>
 
     </main>
 
@@ -440,4 +1120,5 @@
     </footer>
 
 </body>
+
 </html>
