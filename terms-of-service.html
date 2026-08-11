@@ -1,19 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Selfie Aura Cam</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Terms of Service for Selfie Aura Cam."
+    >
+
+    <meta
+        name="theme-color"
+        content="#171026"
+    >
+
+    <title>Terms of Service | Selfie Aura Cam</title>
+
+    <!-- =========================================================
+         FAVICON / BROWSER TAB ICON
+         Same setup used on the main site and Privacy Policy page.
+         ?v=2 helps bypass an older cached favicon.
+         ========================================================= -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="./assets/selfie-aura-cam-icon.png?v=2"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="./assets/selfie-aura-cam-icon.png?v=2"
+    >
+
+    <link
+        rel="shortcut icon"
+        type="image/png"
+        href="./assets/selfie-aura-cam-icon.png?v=2"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="./assets/selfie-aura-cam-icon.png?v=2"
+    >
+
     <style>
         :root {
-            --primary: #8b5cf6;
-            --secondary: #ec4899;
-            --bg: #0f172a;
-            --surface: rgba(255, 255, 255, 0.03);
-            --surface-border: rgba(255, 255, 255, 0.08);
+            --bg: #0f0a19;
+
+            --surface:
+                rgba(
+                    30,
+                    22,
+                    48,
+                    0.82
+                );
+
+            --surface-border:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
+
+            --primary: #c084fc;
+            --secondary: #f472b6;
+            --accent: #a78bfa;
+
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --accent: #c084fc;
         }
 
         * {
@@ -22,86 +86,261 @@
             padding: 0;
         }
 
+        html {
+            min-height: 100%;
+        }
+
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family:
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
             background-color: var(--bg);
             color: var(--text-main);
+
             line-height: 1.7;
+
             min-height: 100vh;
+
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px;
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.08), transparent 40%),
-                radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.08), transparent 40%);
+
+            padding:
+                40px
+                20px;
+
+            background-image:
+                radial-gradient(
+                    circle at 15% 50%,
+                    rgba(139, 92, 246, 0.08),
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at 85% 30%,
+                    rgba(236, 72, 153, 0.08),
+                    transparent 40%
+                );
+
             background-attachment: fixed;
         }
 
         .container {
             background: var(--surface);
-            border: 1px solid var(--surface-border);
+
+            border:
+                1px solid
+                var(--surface-border);
+
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
+
             border-radius: 28px;
+
             padding: 50px;
+
             max-width: 800px;
             width: 100%;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: fadeUp 0.6s ease-out;
+
+            box-shadow:
+                0 25px 50px -12px
+                rgba(0, 0, 0, 0.5);
+
+            animation:
+                fadeUp
+                0.6s
+                ease-out;
         }
 
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
+        /* =========================================================
+           APP ICON
+           Same styling as index.html and privacy-policy.html
+           ========================================================= */
+
+        .app-icon {
+            width: 112px;
+            height: 112px;
+
+            margin:
+                0
+                auto
+                24px;
+
+            border-radius: 27px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 14px 35px -8px
+                rgba(168, 85, 247, 0.55),
+                0 8px 22px -10px
+                rgba(56, 189, 248, 0.35);
+        }
+
+        .app-icon img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        /* =========================================================
+           BACK LINK
+           ========================================================= */
 
         .back-link {
             display: inline-flex;
             align-items: center;
+
             gap: 8px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.03
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.05
+                );
+
             color: var(--text-main);
+
             text-decoration: none;
-            padding: 10px 18px;
+
+            padding:
+                10px
+                18px;
+
             border-radius: 12px;
+
             font-size: 0.9em;
             font-weight: 500;
+
             margin-bottom: 30px;
-            transition: all 0.2s ease;
+
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
         }
 
-        .back-link:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateX(-4px);
+        .back-link:hover,
+        .back-link:focus-visible {
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
+
+            border-color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.15
+                );
+
+            transform:
+                translateX(-4px);
+
+            text-decoration: none;
+        }
+
+        .back-link:focus-visible {
+            outline:
+                2px solid
+                var(--primary);
+
+            outline-offset: 3px;
         }
 
         .back-link svg {
             width: 16px;
             height: 16px;
+
             fill: currentColor;
+        }
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+
+        .page-header {
+            text-align: center;
         }
 
         h1 {
             font-size: 2.4em;
             font-weight: 800;
-            letter-spacing: -0.02em;
+
+            letter-spacing:
+                -0.02em;
+
             margin-bottom: 5px;
-            background: linear-gradient(to right, #c084fc, #f472b6);
+
+            background:
+                linear-gradient(
+                    to right,
+                    #c084fc,
+                    #f472b6
+                );
+
             -webkit-background-clip: text;
+            background-clip: text;
+
             -webkit-text-fill-color: transparent;
+
+            color: transparent;
         }
 
         .date {
             font-size: 0.95em;
+
             color: var(--accent);
+
             margin-bottom: 40px;
+
             font-weight: 500;
-            letter-spacing: 0.5px;
+
+            letter-spacing:
+                0.5px;
+
             text-transform: uppercase;
         }
+
+        /* =========================================================
+           TERMS CONTENT
+           ========================================================= */
 
         .policy-content {
             text-align: left;
@@ -109,77 +348,281 @@
 
         h2 {
             font-size: 1.4em;
+
             color: #e2e8f0;
-            margin: 35px 0 15px 0;
+
+            margin:
+                35px
+                0
+                15px
+                0;
+
             font-weight: 600;
-            border-bottom: 1px solid var(--surface-border);
+
+            border-bottom:
+                1px solid
+                var(--surface-border);
+
             padding-bottom: 10px;
         }
 
         p {
             color: var(--text-muted);
+
             margin-bottom: 16px;
+
             font-size: 1em;
         }
 
         strong {
             color: #f8fafc;
+
             font-weight: 600;
         }
 
         a {
             color: var(--primary);
+
             text-decoration: none;
+
             font-weight: 500;
-            transition: color 0.2s;
+
+            transition:
+                color 0.2s ease;
         }
 
         a:hover {
             color: var(--secondary);
+
             text-decoration: underline;
         }
 
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        .footer {
+            margin-top: 28px;
+
+            font-size: 0.85em;
+
+            color:
+                rgba(
+                    148,
+                    163,
+                    184,
+                    0.5
+                );
+
+            text-align: center;
+        }
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
         @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px;
+            body {
+                padding:
+                    20px
+                    16px;
             }
+
+            .container {
+                padding:
+                    30px
+                    20px;
+
+                border-radius: 24px;
+            }
+
+            .app-icon {
+                width: 100px;
+                height: 100px;
+
+                border-radius: 24px;
+
+                margin-bottom: 22px;
+            }
+
             h1 {
                 font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.25em;
+            }
+
+            .date {
+                font-size: 0.85em;
+
+                margin-bottom: 32px;
+            }
+
+            .back-link {
+                margin-bottom: 26px;
+            }
+        }
+
+        /* =========================================================
+           ACCESSIBILITY
+           ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+            .container {
+                animation: none;
+            }
+
+            .back-link {
+                transition: none;
+            }
+
+            .back-link:hover,
+            .back-link:focus-visible {
+                transform: none;
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+
+    <main class="container">
+
+        <!-- =====================================================
+             BACK TO HOME
+             ===================================================== -->
+
+        <a
+            class="back-link"
+            href="index.html"
+            aria-label="Back to Selfie Aura Cam home page"
+        >
+            <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path
+                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.42-1.41L7.83 13H20v-2z"
+                />
             </svg>
+
             Back to Home
         </a>
-        
-        <h1>Terms of Service</h1>
-        <p class="date">Effective Date: June 30, 2026</p>
+
+        <!-- =====================================================
+             PAGE HEADER
+             ===================================================== -->
+
+        <div class="page-header">
+
+            <!-- Actual Selfie Aura Cam icon inside the page -->
+            <div class="app-icon">
+                <img
+                    src="./assets/selfie-aura-cam-icon.png"
+                    alt="Selfie Aura Cam app icon"
+                    width="112"
+                    height="112"
+                >
+            </div>
+
+            <h1>
+                Terms of Service
+            </h1>
+
+            <p class="date">
+                Effective Date: June 30, 2026
+            </p>
+
+        </div>
+
+        <!-- =====================================================
+             TERMS
+             ===================================================== -->
 
         <div class="policy-content">
-            <h2>1. Acceptance of Terms</h2>
-            <p>By downloading or using Selfie Aura Cam, these terms will automatically apply to you. You should make sure therefore that you read them carefully before using the app. You are not allowed to copy or modify the app, any part of the app, or our trademarks in any way.</p>
 
-            <h2>2. Use of the App</h2>
-            <p>You agree to use the app responsibly. You must not use the app to capture, process, or distribute any content that is illegal, offensive, or violates the intellectual property rights of others. The app is provided for personal, non-commercial use.</p>
+            <h2>
+                1. Acceptance of Terms
+            </h2>
 
-            <h2>3. Intellectual Property</h2>
-            <p>The app itself, and all the trademarks, copyright, database rights, and other intellectual property rights related to it, belong to the developer. You are not allowed to attempt to extract the source code of the app, translate the app into other languages, or make derivative versions.</p>
+            <p>
+                By downloading or using Selfie Aura Cam, these terms will
+                automatically apply to you. You should make sure therefore
+                that you read them carefully before using the app. You are
+                not allowed to copy or modify the app, any part of the app,
+                or our trademarks in any way.
+            </p>
 
-            <h2>4. Liability and Disclaimer</h2>
-            <p>Selfie Aura Cam is provided strictly on an "as is" and "as available" basis. We make no guarantees that the app will always be safe, secure, or error-free, or that it will function without disruptions or delays. We accept no liability for any loss, direct or indirect, you experience as a result of relying wholly on this functionality of the app.</p>
+            <h2>
+                2. Use of the App
+            </h2>
 
-            <h2>5. Changes to These Terms</h2>
-            <p>We may update our Terms of Service from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Terms of Service on this page.</p>
+            <p>
+                You agree to use the app responsibly. You must not use the
+                app to capture, process, or distribute any content that is
+                illegal, offensive, or violates the intellectual property
+                rights of others. The app is provided for personal,
+                non-commercial use.
+            </p>
 
-            <h2>6. Contact Us</h2>
-            <p>If you have any questions about these Terms, please contact us at <strong>Mohammadabbasbhat@outlook.com</strong>.</p>
+            <h2>
+                3. Intellectual Property
+            </h2>
+
+            <p>
+                The app itself, and all the trademarks, copyright, database
+                rights, and other intellectual property rights related to it,
+                belong to the developer. You are not allowed to attempt to
+                extract the source code of the app, translate the app into
+                other languages, or make derivative versions.
+            </p>
+
+            <h2>
+                4. Liability and Disclaimer
+            </h2>
+
+            <p>
+                Selfie Aura Cam is provided strictly on an "as is" and
+                "as available" basis. We make no guarantees that the app
+                will always be safe, secure, or error-free, or that it will
+                function without disruptions or delays. We accept no
+                liability for any loss, direct or indirect, you experience
+                as a result of relying wholly on this functionality of the
+                app.
+            </p>
+
+            <h2>
+                5. Changes to These Terms
+            </h2>
+
+            <p>
+                We may update our Terms of Service from time to time. Thus,
+                you are advised to review this page periodically for any
+                changes. We will notify you of any changes by posting the
+                new Terms of Service on this page.
+            </p>
+
+            <h2>
+                6. Contact Us
+            </h2>
+
+            <p>
+                If you have any questions about these Terms, please contact
+                us at
+                <strong>
+                    Mohammadabbasbhat@outlook.com
+                </strong>.
+            </p>
+
         </div>
-    </div>
+
+    </main>
+
+    <footer class="footer">
+        &copy; 2026 Selfie Aura Cam. All rights reserved.
+    </footer>
+
 </body>
+
 </html>
